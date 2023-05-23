@@ -32,7 +32,7 @@ jobs:
 
     - name: Install needed OS packages for pycurl
       if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get install -y libcurl4-openssl-dev libssl-dev python3-dev
+      run: sudo apt-get install -y libcurl4-openssl-dev libssl-dev python3-dev
 
 
     - name: Set up Python
