@@ -54,3 +54,20 @@ def daily_min(data):
     :returns: An array of the min inflammation measure across all patients per day
     """
     return np.min(data, axis=0)
+
+
+def daily_above_threshold(row_num, data, threshold):
+    return map(test_for_threshold(data[row_num], threshold), data)
+
+
+def test_for_threshold(val, threshold):
+    """Utility method to test if the given value is GT the threshold.
+
+    :param data: a 2D array of inflammation data
+    :returns: boolean result of testing if val is GT threshold
+    """
+    return val>threshold
+
+
+def daily_above_threshold(data, threshold):
+    return [i > threshold for i in data]
